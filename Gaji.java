@@ -7,10 +7,13 @@ public class Gaji{
         Scanner input = new Scanner(System.in);
         masaKerja = input.nextInt();
         int jamLembur = input.nextInt();
+        int gajiBulanan = gaji(masaKerja);
+        int lemburBulanan = lembur(masaKerja);
 
-        /* Pekerjaan anda mulai dari sini */
+        lemburBulanan*=jamLembur;
+        gajiBulanan+=lemburBulanan;
 
-        /* Pekerjaan anda berakhir sini */
+        System.out.println(gajiBulanan);
 
         System.out.println(Gaji.class.getDeclaredMethods().length);
         System.out.println(Gaji.class.getDeclaredFields().length);
