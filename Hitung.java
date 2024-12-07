@@ -19,7 +19,7 @@ public class Hitung{
             if (data.get(i) < min) {
                 min = data.get(i);
                 }
-                }
+            }
                 return min;
     }
     
@@ -44,7 +44,7 @@ public class Hitung{
             while (!jawab.equals("Y") && !jawab.equals("T")) {
                 jawab = input.next().trim().toUpperCase();
             }
-        } while (jawab.equals("Y"));
+         while (jawab.equals("Y"));
 
         System.out.println("Nilai minimal : "+ nilaiMin(data));
         System.out.println("Nilai maksimal : "+ nilaiMax(data));
