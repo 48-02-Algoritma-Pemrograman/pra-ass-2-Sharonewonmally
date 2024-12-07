@@ -4,55 +4,53 @@ import java.util.ArrayList;
 public class Hitung{
 
     public static ArrayList<Integer> data = new ArrayList<>();
+     public static double rataRata(ArrayList<Integer>data){
+        double total = 0;
+        for (int i = 0; i < data.size(); i++) {
+                total += data.get(i);
+            }
+        double rata = total / data.size();
+        return rata;
+    }
+
+    public static int nilaiMin (ArrayList<Integer>data){
+        int min = data.get(0);
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i) < min) {
+                min = data.get(i);
+                }
+                }
+                return min;
+    }
+    
+    public static int nilaiMax (ArrayList<Integer>data){
+        int max = data.get(0);
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i) > max) {
+                max = data.get(i);
+                }
+                }
+                return max;
+    }
+
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-       while (true) {
-            System.out.print("Masukkan angka: ");
-            int angka = input.nextInt();
-            data.add(angka);
+        String jawab;
 
-            System.out.print("Masukkan lagi? (Y/T): ");
-            String pilihan = input.next();
-            if (pilihan.equalsIgnoreCase("T")) {
-                break;
+        do {
+            data.add(input.nextInt());
+
+            jawab = input.next().trim().toUpperCase();
+            while (!jawab.equals("Y") && !jawab.equals("T")) {
+                jawab = input.next().trim().toUpperCase();
             }
-        }
+        } while (jawab.equals("Y"));
 
-        int nilaiMinimal = hitungMinimal();
-        int nilaiMaksimal = hitungMaksimal();
-        double nilaiRataRata = hitungRataRata();
-        
+        System.out.println("Nilai minimal : "+ nilaiMin(data));
+        System.out.println("Nilai maksimal : "+ nilaiMax(data));
+        System.out.println("Nilai rata-rata : "+ rataRata(data));
         System.out.println(Hitung.class.getDeclaredMethods().length);
         System.out.println(Hitung.class.getDeclaredFields().length);
-    }
-    public static int hitungMinimal() {
-        int min = data.get(0);
-        for (int angka : data) {
-            if (angka < min) {
-                min = angka;
-            }
-        }
-        return min;
-    }
-
-    // Fungsi untuk menghitung nilai maksimal
-    public static int hitungMaksimal() {
-        int max = data.get(0);
-        for (int angka : data) {
-            if (angka > max) {
-                max = angka;
-            }
-        }
-        return max;
-    }
-
-    // Fungsi untuk menghitung nilai rata-rata
-    public static double hitungRataRata() {
-        int total = 0;
-        for (int angka : data) {
-            total += angka;
-        }
-        return (double) total / data.size();
     }
 }
 
