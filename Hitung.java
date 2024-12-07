@@ -21,10 +21,6 @@ public class Hitung{
         int nilaiMinimal = hitungMinimal();
         int nilaiMaksimal = hitungMaksimal();
         double nilaiRataRata = hitungRataRata();
-
-        System.out.println("Nilai minimal : " + nilaiMinimal);
-        System.out.println("Nilai maksimal : " + nilaiMaksimal);
-        System.out.println("Nilai rata-rata : " + nilaiRataRata);
         
         System.out.println(Hitung.class.getDeclaredMethods().length);
         System.out.println(Hitung.class.getDeclaredFields().length);
