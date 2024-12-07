@@ -19,7 +19,7 @@ public class Hitung{
             if (data.get(i) < min) {
                 min = data.get(i);
                 }
-            }
+                }
                 return min;
     }
     
